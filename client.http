@@ -1,5 +1,19 @@
 @baseUrl = http://localhost:2222
 
 # @name localhost
-GET {{baseUrl}}
+GET {{baseUrl}}/notifications
 Content-Type: application/json
+
+###
+
+# @name create_notification
+POST {{baseUrl}}/notifications
+Content-Type: application/json
+
+{
+  "recipientId": "0bb258cc-baec-426f-b95c-ec5d1db11e06",
+  "content": "Conteúdo da notificação",
+  "category": "warning"
+}
+
+###
