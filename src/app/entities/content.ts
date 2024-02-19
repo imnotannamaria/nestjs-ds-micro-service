@@ -1,7 +1,7 @@
 export class Content {
   private readonly content: string
 
-  get Vvlue() {
+  get value() {
     return this.content
   }
 

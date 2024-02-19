@@ -1,11 +1,5 @@
 @baseUrl = http://localhost:2222
 
-# @name localhost
-GET {{baseUrl}}/notifications
-Content-Type: application/json
-
-###
-
 # @name create_notification
 POST {{baseUrl}}/notifications
 Content-Type: application/json
