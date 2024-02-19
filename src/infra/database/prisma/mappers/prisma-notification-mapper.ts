@@ -1,4 +1,4 @@
-import { Notification } from 'src/app/entities/notification'
+import { Notification } from '@app/entities/notification'
 
 export class PrismaNotificationMapper {
   static toPrisma(notification: Notification) {
