@@ -2,8 +2,8 @@ import { makeNotification } from '@test/factories/notification-factory'
 import { InMemoryNotificationRepository } from '@test/repositories/in-memory-notification-repository'
 import { GetRecipientNotifications } from './get-recipient-notifications'
 
-describe('Count recipient notifications', () => {
-  it('should be able count recipient notifications', async () => {
+describe('Get recipient notifications', () => {
+  it('should be able get recipient notifications', async () => {
     const notificationRepository = new InMemoryNotificationRepository()
 
     const getRecipientNotifications = new GetRecipientNotifications(
