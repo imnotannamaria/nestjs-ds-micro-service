@@ -1,8 +1,7 @@
 import { InMemoryNotificationRepository } from '@test/repositories/in-memory-notification-repository'
-import { Content } from '../entities/content'
-import { Notification } from '../entities/notification'
 import { NotificationNotFound } from './errors/notification-not-found.error'
 import { UnreadNotification } from './unread-notification'
+import { makeNotification } from '@test/factories/notification-factory'
 
 describe('Unread notification', () => {
   it('should be able to Unread a notification', async () => {
@@ -10,10 +9,7 @@ describe('Unread notification', () => {
 
     const unreadNotification = new UnreadNotification(notificationRepository)
 
-    const notification = new Notification({
-      recipientId: 'recipient-id',
-      content: new Content('New notitication'),
-      category: 'social',
+    const notification = makeNotification({
       readAt: new Date(),
     })
 

@@ -1,8 +1,7 @@
 import { InMemoryNotificationRepository } from '@test/repositories/in-memory-notification-repository'
-import { Content } from '../entities/content'
-import { Notification } from '../entities/notification'
 import { NotificationNotFound } from './errors/notification-not-found.error'
 import { ReadNotification } from './read-notification'
+import { makeNotification } from '@test/factories/notification-factory'
 
 describe('Read notification', () => {
   it('should be able to read a notification', async () => {
@@ -10,11 +9,7 @@ describe('Read notification', () => {
 
     const readNotification = new ReadNotification(notificationRepository)
 
-    const notification = new Notification({
-      recipientId: 'recipient-id',
-      content: new Content('New notitication'),
-      category: 'social',
-    })
+    const notification = makeNotification()
 
     await notificationRepository.create(notification)
 
