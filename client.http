@@ -1,4 +1,6 @@
 @baseUrl = http://localhost:2222
+@notificationID = {{create_notification.response.body.notification.id}}
+@recipientID = {{create_notification.response.body.notification.recipientId}}
 
 # @name create_notification
 POST {{baseUrl}}/notifications
@@ -9,5 +11,36 @@ Content-Type: application/json
   "content": "Conteúdo da notificação",
   "category": "warning"
 }
+
+###
+
+
+# @name cancel_notification
+PATCH {{baseUrl}}/notifications/{{notificationID}}/cancel
+
+###
+
+
+# @name count_notifications
+GET {{baseUrl}}/notifications/count/from/{{recipientID}}
+
+###
+
+
+# @name get_notifications_from_recipient_id
+GET {{baseUrl}}/notifications/from/{{recipientID}}
+
+
+###
+
+
+# @name read_notification
+PATCH {{baseUrl}}/notifications/{{notificationID}}/read
+
+###
+
+
+# @name unread_notification
+PATCH {{baseUrl}}/notifications/{{notificationID}}/unread
 
 ###
